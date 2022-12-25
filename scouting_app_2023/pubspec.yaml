@@ -31,6 +31,11 @@ flutter:
     - images/home_background.jpg
     - images/launch_button_background.jpg
 
+  fonts:
+    - family: SpaceGrotesk
+      fonts:
+        - asset: assets/fonts/spaceGrotesk/SpaceGrotesk-Bold.ttf
+
 
 
   # To add custom fonts to your application, add a fonts section here,
