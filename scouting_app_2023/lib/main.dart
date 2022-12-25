@@ -27,7 +27,8 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    var backgroundImg = AssetImage("images/home_background.jpg");
+    var backgroundImg = const AssetImage("images/home_background.jpg");
+    var launchButton = const AssetImage("images/launch_button_background.jpg");
     const backgroundColor = Color(0xFF1E1D1D);
     return Scaffold(
       body: Center(
@@ -39,35 +40,54 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              //Background Image
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image(
-                  image: backgroundImg,
-                  width: double.infinity,
-                ),
-              ),
-              //Center Cirle & Icon
               Container(
-                width: 172,
-                height: 172,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  gradient: const LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Colors.red,
-                      Colors.blue,
-                    ],
-                  ),
-                ),
-                child: const Icon(
-                  Icons.cloud_upload_outlined,
-                  color: Color(0xFFE1F576),
-                  size: 91,
+                child: Stack(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.none,
+                  children: [
+                    //Background Image
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image(
+                        image: backgroundImg,
+                        width: double.infinity,
+                      ),
+                    ),
+                    //Center Cirle & Icon
+                    Positioned(
+                      bottom: -39,
+                      child: Container(
+                        width: 172,
+                        height: 172,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Colors.red,
+                              Colors.blue,
+                            ],
+                          ),
+                        ),
+                        child: const Icon(
+                          Icons.cloud_upload_outlined,
+                          color: Color(0xFFE1F576),
+                          size: 91,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
+              //Start Button
+              // ElevatedButton.icon(
+              //   onPressed: () {},
+              //   icon: Image(
+              //     image: launchButton,
+              //   ),
+              //   label: Text('Launch'),
+              // ),
             ],
           ),
         ),
