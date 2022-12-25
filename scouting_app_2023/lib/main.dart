@@ -27,9 +27,51 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    var background = AssetImage("images/home_background.jpg");
+    var backgroundImg = AssetImage("images/home_background.jpg");
+    const backgroundColor = Color(0xFF1E1D1D);
     return Scaffold(
-      body: child(),
+      body: Center(
+        // Background
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: backgroundColor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              //Background Image
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image(
+                  image: backgroundImg,
+                  width: double.infinity,
+                ),
+              ),
+              //Center Cirle & Icon
+              Container(
+                width: 172,
+                height: 172,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Colors.red,
+                      Colors.blue,
+                    ],
+                  ),
+                ),
+                child: const Icon(
+                  Icons.cloud_upload_outlined,
+                  color: Color(0xFFE1F576),
+                  size: 91,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
