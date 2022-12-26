@@ -80,56 +80,58 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ],
                 ),
               ),
-              //Launch Button
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // Container(
-                  //   color: Colors.red,
-                  //   width: 100,
-                  //   height: 200,
-                  // ),
-                  GestureDetector(
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Container(
-                          width: 287,
-                          height: 131,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.black,
-                            image: DecorationImage(
-                              image: launchButton,
-                              fit: BoxFit.cover,
-                            ),
-                            // child: Text("clickMe") // button text
-                          ),
-                        ),
-                        const Text(
-                          "Launch",
-                          style: TextStyle(
-                            fontFamily: 'SpaceGrotesk',
-                            fontSize: 45,
-                            fontWeight: FontWeight.bold,
-                            shadows: [
-                              Shadow(
-                                blurRadius: 10.0, // shadow blur
-                                color: Colors.grey, // shadow color
-                                offset: Offset(
-                                    3.0, 3.0), // how much shadow will be shown
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Container(
+                    //   color: Colors.red,
+                    //   width: 100,
+                    //   height: 200,
+                    // ),
+                    GestureDetector(
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            width: 287,
+                            height: 131,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.black,
+                              image: DecorationImage(
+                                image: launchButton,
+                                fit: BoxFit.cover,
                               ),
-                            ],
+                              // child: Text("clickMe") // button text
+                            ),
                           ),
-                        ),
-                      ],
+                          const Text(
+                            "Launch",
+                            style: TextStyle(
+                              fontFamily: 'SpaceGrotesk',
+                              fontSize: 45,
+                              fontWeight: FontWeight.bold,
+                              shadows: [
+                                Shadow(
+                                  blurRadius: 10.0, // shadow blur
+                                  color: Colors.grey, // shadow color
+                                  offset: Offset(3.0,
+                                      3.0), // how much shadow will be shown
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      onTap: () {
+                        print("you clicked me");
+                      },
                     ),
-                    onTap: () {
-                      print("you clicked me");
-                    },
-                  ),
-                ],
-              )
+                  ],
+                ),
+              ),
+              //Launch Button
             ],
           ),
         ),
