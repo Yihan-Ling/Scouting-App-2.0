@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scouting_app_2023/scout_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -84,11 +85,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Container(
-                    //   color: Colors.red,
-                    //   width: 100,
-                    //   height: 200,
-                    // ),
                     GestureDetector(
                       child: Stack(
                         alignment: Alignment.center,
@@ -125,7 +121,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ],
                       ),
                       onTap: () {
-                        print("you clicked me");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ScoutHomeScreen()),
+                        );
                       },
                     ),
                   ],

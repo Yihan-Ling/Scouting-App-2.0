@@ -30,11 +30,15 @@ flutter:
   assets:
     - images/home_background.jpg
     - images/launch_button_background.jpg
+    - images/scout_card_background.jpeg
 
   fonts:
     - family: SpaceGrotesk
       fonts:
         - asset: assets/fonts/spaceGrotesk/SpaceGrotesk-Bold.ttf
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/inter/Inter-VariableFont.ttf
 
 
 
