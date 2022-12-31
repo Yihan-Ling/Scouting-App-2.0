@@ -137,6 +137,73 @@ class _ScoutHomeState extends State<ScoutHomeScreen> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF0D0C0C),
+        child: Icon(
+          Icons.add_to_photos_rounded,
+          color: Color(0xFFE1F576),
+          size: 40,
+        ),
+        onPressed: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        color: Color(0xFF0D0C0C),
+        elevation: 10,
+        shape: CircularNotchedRectangle(),
+        child: Container(
+          height: 60,
+          child: Row(children: [
+            Expanded(
+              child: TextButton(
+                onPressed: () {},
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      Icons.paste_rounded,
+                      color: Color(0xFFE1F576),
+                    ),
+                    Text(
+                      'Scout',
+                      style: TextStyle(
+                        color: Color(0xFFE1F576),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: SizedBox(
+                child: Container(color: Color(0xFF0D0C0C)),
+              ),
+            ),
+            Expanded(
+              child: TextButton(
+                onPressed: () {},
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      Icons.add_to_drive_rounded,
+                      color: Color(0xFFF4F6F4),
+                    ),
+                    Text(
+                      'Sync',
+                      style: TextStyle(
+                        color: Color(0xFFF4F6F4),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ]),
+        ),
+      ),
     );
   }
 }
