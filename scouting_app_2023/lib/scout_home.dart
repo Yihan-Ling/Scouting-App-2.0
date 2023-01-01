@@ -137,14 +137,22 @@ class _ScoutHomeState extends State<ScoutHomeScreen> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF0D0C0C),
-        child: Icon(
-          Icons.add_to_photos_rounded,
-          color: Color(0xFFE1F576),
-          size: 40,
+      floatingActionButton: Container(
+        height: 80,
+        width: 80,
+
+        // decoration: BoxDecoration(
+        //   borderRadius: 100
+        // ),
+        child: FloatingActionButton(
+          backgroundColor: Color(0xFF0D0C0C),
+          child: Icon(
+            Icons.add_to_photos_rounded,
+            color: Color(0xFFE1F576),
+            size: 40,
+          ),
+          onPressed: () {},
         ),
-        onPressed: () {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
