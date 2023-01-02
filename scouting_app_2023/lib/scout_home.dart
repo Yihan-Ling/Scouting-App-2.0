@@ -1,22 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
-// void main() {
-//   runApp(const ScoutHome());
-// }
-
-// class ScoutHome extends StatelessWidget {
-//   const ScoutHome({super.key});
-
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       title: 'Scouting Home Screen',
-//     );
-//   }
-// }
+import 'package:scouting_app_2023/scout_questions.dart';
 
 class ScoutHomeScreen extends StatefulWidget {
   const ScoutHomeScreen({super.key});
@@ -140,10 +125,6 @@ class _ScoutHomeState extends State<ScoutHomeScreen> {
       floatingActionButton: Container(
         height: 80,
         width: 80,
-
-        // decoration: BoxDecoration(
-        //   borderRadius: 100
-        // ),
         child: FloatingActionButton(
           backgroundColor: Color(0xFF0D0C0C),
           child: Icon(
@@ -151,7 +132,13 @@ class _ScoutHomeState extends State<ScoutHomeScreen> {
             color: Color(0xFFE1F576),
             size: 40,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ScoutQuestionScreen()),
+            );
+          },
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
