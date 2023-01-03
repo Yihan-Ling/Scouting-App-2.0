@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:scouting_app_2023/scout_questions.dart';
+import 'package:scouting_app_2023/sync_home.dart';
 
 class ScoutHomeScreen extends StatefulWidget {
   const ScoutHomeScreen({super.key});
@@ -103,6 +104,100 @@ class _ScoutHomeState extends State<ScoutHomeScreen> {
     );
   }
 
+  _floatingNaviButton() {
+    return Container(
+      height: 80,
+      width: 80,
+      child: FloatingActionButton(
+        backgroundColor: Color(0xFF0D0C0C),
+        child: Icon(
+          Icons.add_to_photos_rounded,
+          color: Color(0xFFE1F576),
+          size: 40,
+        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const ScoutQuestionScreen()),
+          );
+        },
+      ),
+    );
+  }
+
+  _buttomNaviBar() {
+    return BottomAppBar(
+      color: Color(0xFF0D0C0C),
+      elevation: 10,
+      shape: CircularNotchedRectangle(),
+      child: Container(
+        height: 60,
+        child: Row(children: [
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ScoutHomeScreen()),
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.paste_rounded,
+                    color: Color(0xFFE1F576),
+                  ),
+                  Text(
+                    'Scout',
+                    style: TextStyle(
+                      color: Color(0xFFE1F576),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: SizedBox(
+              child: Container(color: Color(0xFF0D0C0C)),
+            ),
+          ),
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SyncHomeScreen()),
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.add_to_drive_rounded,
+                    color: Color(0xFFF4F6F4),
+                  ),
+                  Text(
+                    'Sync',
+                    style: TextStyle(
+                      color: Color(0xFFF4F6F4),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ]),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,83 +217,9 @@ class _ScoutHomeState extends State<ScoutHomeScreen> {
           ),
         ),
       ),
-      floatingActionButton: Container(
-        height: 80,
-        width: 80,
-        child: FloatingActionButton(
-          backgroundColor: Color(0xFF0D0C0C),
-          child: Icon(
-            Icons.add_to_photos_rounded,
-            color: Color(0xFFE1F576),
-            size: 40,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const ScoutQuestionScreen()),
-            );
-          },
-        ),
-      ),
+      floatingActionButton: _floatingNaviButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        color: Color(0xFF0D0C0C),
-        elevation: 10,
-        shape: CircularNotchedRectangle(),
-        child: Container(
-          height: 60,
-          child: Row(children: [
-            Expanded(
-              child: TextButton(
-                onPressed: () {},
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.paste_rounded,
-                      color: Color(0xFFE1F576),
-                    ),
-                    Text(
-                      'Scout',
-                      style: TextStyle(
-                        color: Color(0xFFE1F576),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              child: SizedBox(
-                child: Container(color: Color(0xFF0D0C0C)),
-              ),
-            ),
-            Expanded(
-              child: TextButton(
-                onPressed: () {},
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.add_to_drive_rounded,
-                      color: Color(0xFFF4F6F4),
-                    ),
-                    Text(
-                      'Sync',
-                      style: TextStyle(
-                        color: Color(0xFFF4F6F4),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ]),
-        ),
-      ),
+      bottomNavigationBar: _buttomNaviBar(),
     );
   }
 }
